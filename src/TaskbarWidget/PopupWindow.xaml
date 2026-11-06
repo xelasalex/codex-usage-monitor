@@ -1,0 +1,120 @@
+<Window x:Class="TaskbarWidget.PopupWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Codex Usage" Width="370" SizeToContent="Height" WindowStyle="None" AllowsTransparency="True"
+  Background="Transparent" ShowInTaskbar="False" Topmost="True" ResizeMode="NoResize"
+  FontFamily="Segoe UI" FontSize="12" Foreground="#F3F3F3">
+  <Window.Resources>
+    <Style x:Key="Btn" TargetType="Button">
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Background" Value="#3A3A3A"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Padding" Value="12,6"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4A4A4A"/>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#2A2A2A"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+  <Border x:Name="Card" Background="#252525" BorderBrush="#3D3D3D" BorderThickness="1" CornerRadius="10" Padding="14">
+    <Border.Effect>
+      <DropShadowEffect Color="Black" BlurRadius="16" ShadowDepth="0" Opacity=".5"/>
+    </Border.Effect>
+    <StackPanel>
+      <TextBlock Text="Codex Usage" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,8" Foreground="White"/>
+      <TextBlock x:Name="L5" Text="5H: —" Margin="0,0,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+        <Grid Width="13" Height="13" Margin="0,0,5,0" VerticalAlignment="Center">
+          <Ellipse Stroke="#C7C7C7" StrokeThickness="1.3" Fill="Transparent"/>
+          <Line X1="6.5" Y1="6.5" X2="6.5" Y2="3.2" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+          <Line X1="6.5" Y1="6.5" X2="9" Y2="7.5" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+        </Grid>
+        <TextBlock x:Name="Cd5" Text="" Foreground="#C7C7C7"/>
+      </StackPanel>
+      <TextBlock x:Name="LW" Text="W: —" Margin="0,0,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+        <Grid Width="13" Height="13" Margin="0,0,5,0" VerticalAlignment="Center">
+          <Ellipse Stroke="#C7C7C7" StrokeThickness="1.3" Fill="Transparent"/>
+          <Line X1="6.5" Y1="6.5" X2="6.5" Y2="3.2" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+          <Line X1="6.5" Y1="6.5" X2="9" Y2="7.5" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+        </Grid>
+        <TextBlock x:Name="CdW" Text="" Foreground="#C7C7C7"/>
+      </StackPanel>
+      <TextBlock Text="Claude" FontSize="14" FontWeight="SemiBold" Margin="0,8,0,8" Foreground="#8EC9FF"/>
+      <TextBlock x:Name="LCl5" Text="5H: —" Margin="0,0,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+        <Grid Width="13" Height="13" Margin="0,0,5,0" VerticalAlignment="Center">
+          <Ellipse Stroke="#C7C7C7" StrokeThickness="1.3" Fill="Transparent"/>
+          <Line X1="6.5" Y1="6.5" X2="6.5" Y2="3.2" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+          <Line X1="6.5" Y1="6.5" X2="9" Y2="7.5" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+        </Grid>
+        <TextBlock x:Name="CdCl5" Text="" Foreground="#C7C7C7"/>
+      </StackPanel>
+      <TextBlock x:Name="LClW" Text="W: —" Margin="0,0,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+        <Grid Width="13" Height="13" Margin="0,0,5,0" VerticalAlignment="Center">
+          <Ellipse Stroke="#C7C7C7" StrokeThickness="1.3" Fill="Transparent"/>
+          <Line X1="6.5" Y1="6.5" X2="6.5" Y2="3.2" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+          <Line X1="6.5" Y1="6.5" X2="9" Y2="7.5" Stroke="#C7C7C7" StrokeThickness="1.3"/>
+        </Grid>
+        <TextBlock x:Name="CdClW" Text="" Foreground="#C7C7C7"/>
+      </StackPanel>
+      <TextBlock x:Name="LClConn" TextWrapping="Wrap" Text="" Foreground="White"/>
+      <CheckBox x:Name="CkClaudeContext" Content="Mostrar contexto Claude" Foreground="White" Margin="0,4,0,0"/>
+      <TextBlock x:Name="LCtx" Text="CTX: —" Margin="0,0,0,0" Foreground="#C7C7C7"/>
+      <Button x:Name="BtnClaudeLogin" Content="Conectar Claude" Visibility="Collapsed" Margin="0,8,0,0" Background="#0078D4" Style="{StaticResource Btn}"/>
+      <Button x:Name="BtnClaudeLogout" Content="Cerrar sesión" Visibility="Collapsed" Margin="0,8,0,0" Style="{StaticResource Btn}"/>
+      <TextBlock x:Name="LConn" TextWrapping="Wrap" Text="" Foreground="White"/>
+      <CheckBox x:Name="CkAuto" Content="Iniciar con Windows" Margin="0,8,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+        <TextBlock x:Name="LblDelay" Text="Retardo arranque (s)" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <TextBox x:Name="TbDelay" Text="10" Width="44" Background="#3A3A3A" Foreground="White" BorderThickness="0" Padding="4,2"/>
+      </StackPanel>
+      <CheckBox x:Name="CkLock" Content="Bloquear posición" Margin="0,4,0,0" IsChecked="True" Foreground="White"/>
+      <CheckBox x:Name="CkOverlay" Content="Superponer a todo" Margin="0,4,0,0" Foreground="White"/>
+      <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+        <TextBlock x:Name="LblSize" Text="Tamaño" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Button x:Name="BtnS" Content="S" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnM" Content="M" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnL" Content="L" Style="{StaticResource Btn}" Padding="10,4"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+        <TextBlock x:Name="LblLang" Text="Idioma" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Button x:Name="BtnEs" Content="ES" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnEn" Content="EN" Style="{StaticResource Btn}" Padding="10,4"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+        <TextBlock x:Name="LblPoll" Text="Actualizar cada" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Button x:Name="BtnP15" Content="15s" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnP30" Content="30s ★" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnP60" Content="1m" Margin="0,0,4,0" Style="{StaticResource Btn}" Padding="10,4"/>
+        <Button x:Name="BtnP300" Content="5m" Style="{StaticResource Btn}" Padding="10,4"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+        <TextBlock x:Name="LblSound" Text="Sonido" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Slider x:Name="SlVol" Minimum="0" Maximum="100" Value="80" Width="150" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Button x:Name="BtnChimeTest" Content="Probar" Style="{StaticResource Btn}" Padding="10,4"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+        <Button x:Name="BtnRetry" Content="Reintentar" Margin="0,0,8,0" Style="{StaticResource Btn}"/>
+        <Button x:Name="BtnRestart" Content="Reiniciar" Margin="0,0,8,0" Style="{StaticResource Btn}"/>
+        <Button x:Name="BtnLogin" Content="Iniciar sesión" Visibility="Collapsed" Margin="0,0,8,0" Background="#0078D4" Style="{StaticResource Btn}"/>
+        <Button x:Name="BtnLogout" Content="Cerrar sesión" Margin="0,0,8,0" Style="{StaticResource Btn}"/>
+        <Button x:Name="BtnExit" Content="Salir" Style="{StaticResource Btn}"/>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>
